@@ -108,7 +108,7 @@
 </main>
 
 <style lang="scss">
-	@import './vars.scss';
+	@import 'src/vars.scss';
 	.Buttons
 	{
 		width: 100%;
