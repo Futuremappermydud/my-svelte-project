@@ -2,6 +2,7 @@
 	import { Modal } from "carbon-components-svelte";
 	import Spacer from "./Components/Spacer.svelte";
 	import ProjectTile from "./Components/ProjectTile.svelte";
+	import { InlineNotification } from "carbon-components-svelte";
 	let ghModal = false;
 	let discModal = false;
 	let twitModal = false;
@@ -9,7 +10,9 @@
 	let projects = [
 		{
 			"name": "Weather",
-			"link": "s"
+			"desc": "Beat Saber mod that adds various weather effects to your game",
+			"icon": "https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/WeatherCover.png",
+			"link": "https://github.com/Futuremappermydud/Beat-Saber-Weather"
 		}
 	]
 </script>
@@ -20,8 +23,15 @@
     href="https://unpkg.com/carbon-components-svelte/css/g90.css"
   />
 </svelte:head>
-
 <main>
+	<div class="bg"></div>
+	<InlineNotification
+		kind="info-square"
+		title="WIP"
+		subtitle="This site is still being worked on :)"
+		timeout=3000
+		style="position: absolute; width: 500px"
+	/>
 	{#if ghModal || discModal || twitModal}
 		<Modal
 			size=xs
@@ -41,7 +51,7 @@
 			on:open
 			on:close
 		>
-			<a href="https://twitter.com/Futuremapper_/" style="color: #3266ba; font-weight: bold; font-size: 1.25em;">Futuremappermydud</a>
+			<a href="https://twitter.com/Futuremapper_/" target="_blank" rel="noreferrer noopener" style="color: #3266ba; font-weight: bold; font-size: 1.25em;">Futuremappermydud</a>
 		</Modal>
 		<Modal
 			size=xs
@@ -51,7 +61,7 @@
 			on:open
 			on:close
 		>
-			<a href="https://github.com/Futuremapper/" rel="noreferrer noopener" style="color: #3266ba; font-weight: bold; font-size: 1.25em;">Futuremappermydud</a>
+			<a href="https://github.com/Futuremapper/" target="_blank" rel="noreferrer noopener" style="color: #3266ba; font-weight: bold; font-size: 1.25em;">Futuremappermydud</a>
 		</Modal>
 	{/if}
 	{#if fadeHeader}
@@ -84,10 +94,15 @@
 			<img class="socMediaImage" src="https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/TwitterLogo.png" alt="Twitter"/>
 		</button>
 	</div>
-	<Spacer height=250/>
+	<Spacer height=150/>
 	<h1>Projects</h1>
 	{#each projects as project}
-		<ProjectTile/>
+		<ProjectTile
+			name = {project.name}
+			desc = {project.desc}
+			link = {project.link}
+			icon = {project.icon}
+		/>
 	{/each}
 
 </main>
@@ -135,6 +150,7 @@
 		margin-top: 5px;
 		margin-left: 10px;
 		margin-right: 10px;
+		cursor:pointer;
 	}
 	.discord
 	{
@@ -195,6 +211,25 @@
 			max-width: none;
 		}
 	}
+
+	.bg {
+		position: absolute;
+        z-index: 1;
+        background: black;
+        width: 100%;
+        height: 100%;
+        animation: fadeInAnimation ease 1.5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	@keyframes fadeInAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+     }
+}
 
 	:global(body) {
 		background-color: #262626;
