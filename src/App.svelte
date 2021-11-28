@@ -17,7 +17,7 @@
 		Beat Saber Modder
 	</h3>
 	<button>
-		<img class="socMediaImage" src="../images/icon_clyde_white_RGB.png" alt="bruh"/>
+		<img class="socMediaImage" src="../src/images/icon_clyde_white_RGB.png" alt="bruh"/>
 	</button>
 </main>
 
