@@ -1,8 +1,17 @@
 <script>
 	import { Modal } from "carbon-components-svelte";
+	import Spacer from "./Components/Spacer.svelte";
+	import ProjectTile from "./Components/ProjectTile.svelte";
 	let ghModal = false;
 	let discModal = false;
 	let twitModal = false;
+	export let fadeHeader = false;
+	let projects = [
+		{
+			"name": "Weather",
+			"link": "s"
+		}
+	]
 </script>
 
 <svelte:head>
@@ -13,39 +22,51 @@
 </svelte:head>
 
 <main>
-	<Modal
-		size=xs
-		bind:open={discModal}
-		modalHeading="Discord"
-		passiveModal
-		on:open
-		on:close
-	>
-		<p style="color: #808080; font-weight: bold; font-size: 1.25em;">FutureMapper#3488</p>
-	</Modal>
-	<Modal
-		size=xs
-		bind:open={twitModal}
-		modalHeading="Twitter"
-		passiveModal
-		on:open
-		on:close
-	>
-		<a href="https://twitter.com/Futuremapper_" style="color: #3266ba; font-weight: bold; font-size: 1.25em;">Futuremappermydud</a>
-	</Modal>
-	<Modal
-		size=xs
-		bind:open={ghModal}
-		modalHeading="Github"
-		passiveModal
-		on:open
-		on:close
-	>
-		<a href="https://github.com/Futuremapper" style="color: #3266ba; font-weight: bold; font-size: 1.25em;">Futuremappermydud</a>
-	</Modal>
-	<h1>
-		Future Mapper
-	</h1>
+	{#if ghModal || discModal || twitModal}
+		<Modal
+			size=xs
+			bind:open={discModal}
+			modalHeading="Discord"
+			passiveModal
+			on:open
+			on:close
+		>
+			<p style="color: #808080; font-weight: bold; font-size: 1.25em;">FutureMapper#3488</p>
+		</Modal>
+		<Modal
+			size=xs
+			bind:open={twitModal}
+			modalHeading="Twitter"
+			passiveModal
+			on:open
+			on:close
+		>
+			<a href="https://twitter.com/Futuremapper_/" style="color: #3266ba; font-weight: bold; font-size: 1.25em;">Futuremappermydud</a>
+		</Modal>
+		<Modal
+			size=xs
+			bind:open={ghModal}
+			modalHeading="Github"
+			passiveModal
+			on:open
+			on:close
+		>
+			<a href="https://github.com/Futuremapper/" rel="noreferrer noopener" style="color: #3266ba; font-weight: bold; font-size: 1.25em;">Futuremappermydud</a>
+		</Modal>
+	{/if}
+	{#if fadeHeader}
+	<div class="headerParent headerBG">
+		<h1 class="mainHeader">
+			Future Mapper
+		</h1>
+	</div>
+	{:else}
+	<div class="headerParent">
+		<h1 class="mainHeader">
+			Future Mapper
+		</h1>
+	</div>
+	{/if}
 	<h2>
 		Game Modder / Reverse Engineer
 	</h2>
@@ -63,6 +84,12 @@
 			<img class="socMediaImage" src="https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/TwitterLogo.png" alt="Twitter"/>
 		</button>
 	</div>
+	<Spacer height=250/>
+	<h1>Projects</h1>
+	{#each projects as project}
+		<ProjectTile/>
+	{/each}
+
 </main>
 
 <style lang="scss">
@@ -135,7 +162,6 @@
 	}
 	main {
 		text-align: center;
-		padding: 1em;
 		max-width: 240px;	
 		margin: 0 auto;
 	}
@@ -152,6 +178,16 @@
 		text-transform: uppercase;
 		font-size: $SubHeader-Size;
 		font-weight: 100;
+	}
+
+	.headerParent {
+		top: 0px;
+		position: -webkit-sticky;
+		position: sticky;
+	}
+
+	.headerBG {
+		background-color: rgba(0, 0, 0, 0.25);
 	}
 
 	@media (min-width: 640px) {
