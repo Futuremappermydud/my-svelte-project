@@ -20,11 +20,11 @@
 		Game Modder / Reverse Engineer
 	</h3>
 	<button class="discord" on:click={() => (discModalOpen = true)}>
-		<img class="socMediaImage" src="https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/icon_clyde_white_RGB.png?token=AM6HQMCFCXEKXLU6TFERVF3BUPL7U" alt="bruh"/>
+		<img class="socMediaImage" src="https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/DiscordLogo.png?token=AM6HQMCFCXEKXLU6TFERVF3BUPL7U" alt="Discord"/>
 	</button>
 	<br/>
 	<button class="github" on:click={() => (open = true)}>
-		<img class="socMediaImage" src="" alt="bruh"/>
+		<img class="socMediaImage" src="https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/GithubLogo.png?token=AM6HQMCFCXEKXLU6TFERVF3BUPL7U" alt="Github"/>
 	</button>
 	<Modal
 		bind:open
