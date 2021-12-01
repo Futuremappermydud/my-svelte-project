@@ -28,9 +28,10 @@
         background-color: #4279df;
         display: flex;
         align-items: center;
+        box-shadow: 0 3px 2px -2px #3d6fce;
         &:not(:active)
         {
-            box-shadow: 0 4px 2px -2px #4e6ba2;
+            box-shadow: 0 4px 2px -2px #3d6fce;
         }
     }
     .imgWrapper
