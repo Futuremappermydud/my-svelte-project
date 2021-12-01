@@ -21,8 +21,8 @@
 			"link": "https://github.com/Futuremappermydud/Song-Music-Visualizer"
 		},
 		{
-			"name": "Better Song Search Quest",
-			"desc": "Beat Saber mod that adds a better way to find new songs.",
+			"name": "Better Song Search",
+			"desc": "Quest port of a Beat Saber mod that adds a better way to find new songs.",
 			"icon": "https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/MagnifyingGlass.png",
 			"link": "https://github.com/Futuremappermydud/Song-Music-Visualizer"
 		}
