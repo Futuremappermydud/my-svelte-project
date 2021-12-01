@@ -24,7 +24,7 @@
 			"name": "Better Song Search",
 			"desc": "Quest port of a Beat Saber mod that adds a better way to find new songs.",
 			"icon": "https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/MagnifyingGlass.png",
-			"link": "https://github.com/Futuremappermydud/Song-Music-Visualizer"
+			"link": "https://github.com/Christoffyw/BetterSongSearchQuest"
 		}
 	]
 </script>
@@ -107,7 +107,7 @@
 		</button>
 	</div>
 	<Spacer height=150/>
-	<h1>Projects</h1>
+	<h1 class="projectsHeader">Projects</h1>
 	<div style="margin: 10px;">
 		{#each projects as project}
 			<ProjectTile
@@ -228,6 +228,39 @@
 		text-align: center;
 		max-width: 240px;	
 		margin: 0 auto;
+	}
+
+	@keyframes projectsHeader-bob {
+		0% {
+			-webkit-transform: translateY(-4px);
+			transform: translateY(-8px);
+		}
+		50% {
+			-webkit-transform: translateY(0px);
+			transform: translateY(0px);
+		}
+		100% {
+			-webkit-transform: translateY(-4px);
+			transform: translateY(-4px);
+		}
+	}
+
+	@keyframes projectsHeader-bob-float {
+		100% {
+			-webkit-transform: translateY(-4px);
+			transform: translateY(-4px);
+		}
+	}
+
+	.projectsHeader
+	{
+		animation-name: projectsHeader-bob-float, projectsHeader-bob;
+		animation-duration: .3s, 1.5s;
+		animation-delay: 0s, .3s;
+		animation-timing-function: ease-out, ease-in-out;	
+		animation-iteration-count: 1, infinite;
+		animation-fill-mode: forwards;
+		animation-direction: normal, alternate;
 	}
 
 	h1 {
