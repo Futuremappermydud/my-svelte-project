@@ -8,7 +8,7 @@
     }
 </script>
 
-<div class="tile" on:click={() => NewTab()} style="cursor:pointer">
+<div class="tile" on:click={() => NewTab()} style="cursor:pointer; margin-top: 7.5px;">
     <div class="imgWrapper">
         <img src="{icon}" alt="icon">
     </div>
@@ -20,6 +20,7 @@
 
 <style lang="scss">
     .tile {
+        font-size: 0.9em;
         margin: auto;
         border-radius: 8px;
         width: 350px;
@@ -38,7 +39,6 @@
         border-radius: 8px;
         width: 143.5px;
         height: 100px;
-        background-color: #303030; 
         display: flex;
         align-items: center;
         justify-content: center;

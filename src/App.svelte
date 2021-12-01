@@ -13,6 +13,18 @@
 			"desc": "Beat Saber mod that adds various weather effects to your game",
 			"icon": "https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/WeatherCover.png",
 			"link": "https://github.com/Futuremappermydud/Beat-Saber-Weather"
+		},
+		{
+			"name": "Song Music Visualizer",
+			"desc": "Beat Saber mod that adds a music visualizer to your menu",
+			"icon": "https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/SpectrogramImage.png",
+			"link": "https://github.com/Futuremappermydud/Song-Music-Visualizer"
+		},
+		{
+			"name": "Better Song Search Quest",
+			"desc": "Beat Saber mod that adds a better way to find new songs.",
+			"icon": "https://raw.githubusercontent.com/Futuremappermydud/my-svelte-project/main/src/Images/MagnifyingGlass.png",
+			"link": "https://github.com/Futuremappermydud/Song-Music-Visualizer"
 		}
 	]
 </script>
@@ -96,14 +108,16 @@
 	</div>
 	<Spacer height=150/>
 	<h1>Projects</h1>
-	{#each projects as project}
-		<ProjectTile
-			name = {project.name}
-			desc = {project.desc}
-			link = {project.link}
-			icon = {project.icon}
-		/>
-	{/each}
+	<div style="margin: 10px;">
+		{#each projects as project}
+			<ProjectTile
+				name = {project.name}
+				desc = {project.desc}
+				link = {project.link}
+				icon = {project.icon}
+			/>
+		{/each}
+	</div>
 
 </main>
 
@@ -260,8 +274,12 @@
     0% {
         opacity: 1;
     }
+	90% {
+		visibility: visible;
+	}
     100% {
         opacity: 0;
+		visibility: hidden;
      }
 }
 
