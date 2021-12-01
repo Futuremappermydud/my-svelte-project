@@ -47,6 +47,11 @@
     img {
         width: 80px;
         height: 80px;
+        -webkit-user-drag: none;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
     }
     .meta {
         width: 100%;
